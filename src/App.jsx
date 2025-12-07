@@ -1,25 +1,20 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DynamicNavbar from "./components/Navbar";
-import { navItems } from "./config/navItems";
-import { generateRoutes } from "./routes/generateRoutes";
+import { routeConfig } from "./config/routeConfig";
 
 function App() {
-  const userRole = "admin"; // later from auth
-
-  const routes = generateRoutes(navItems[userRole]);
+  const userRole = "admin"; // dynamic
 
   return (
-    <>
+    <Router>
       <DynamicNavbar userRole={userRole} />
-
       <Routes>
-        {routes.map((r, i) => (
-          <Route key={i} path={r.path} element={r.element} />
+        {Object.entries(routeConfig).map(([path, Component]) => (
+           <Route key={path} path={path} element={Component } />
         ))}
       </Routes>
-    </>
+    </Router>
   );
 }
 

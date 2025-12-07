@@ -9,7 +9,7 @@ import EmployeeRegister from "../pages/employee/EmployeeRegister";
 import ActivityLog from "../pages/settings/ActivityLog";
 import BackupDatabase from "../pages/settings/BackupDatabase";
 
-// Import from your NPM module
+// NPM module
 import { DeathFormWizard } from "registers-module";
 
 export const routeConfig = {

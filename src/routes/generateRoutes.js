@@ -1,4 +1,4 @@
-import { routeConfig } from "../config/routeConfig";
+import { routeConfig } from "../config/routeConfig.jsx";
 
 export const generateRoutes = (nav) => {
   const list = [];
